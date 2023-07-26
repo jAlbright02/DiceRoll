@@ -1,11 +1,14 @@
 package com.example.diceroller
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
 import android.widget.AdapterView
 import android.widget.ArrayAdapter
+import android.widget.Button
 import android.widget.Spinner
+import android.widget.Toast
 
 class MainActivity : AppCompatActivity() {
 
@@ -16,6 +19,10 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main)
 
         val spinner : Spinner = findViewById(R.id.spinner)
+
+        val button : Button = findViewById(R.id.button)
+
+        val intent = Intent(this, RollingDice::class.java)
 
         ArrayAdapter.createFromResource(
             this,
@@ -35,6 +42,11 @@ class MainActivity : AppCompatActivity() {
                 amount = 0
             }
 
+        }
+
+        button.setOnClickListener {
+            Toast.makeText(this, "Rolling...", Toast.LENGTH_SHORT).show()
+            startActivity(intent)
         }
 
     }
