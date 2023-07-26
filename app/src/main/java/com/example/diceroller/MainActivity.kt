@@ -22,7 +22,7 @@ class MainActivity : AppCompatActivity() {
 
         val button : Button = findViewById(R.id.button)
 
-        val intent = Intent(this, RollingDice::class.java)
+        val mainAct = Intent(this, RollingDice::class.java)
 
         ArrayAdapter.createFromResource(
             this,
@@ -46,7 +46,7 @@ class MainActivity : AppCompatActivity() {
 
         button.setOnClickListener {
             Toast.makeText(this, "Rolling...", Toast.LENGTH_SHORT).show()
-            startActivity(intent)
+            startActivity(mainAct)
         }
 
     }
