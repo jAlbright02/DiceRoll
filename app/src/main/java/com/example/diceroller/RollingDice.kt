@@ -1,11 +1,13 @@
 package com.example.diceroller
 
 import android.content.Intent
+import android.media.Image
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Button
 import android.widget.ImageButton
 import android.widget.ImageView
+import android.widget.TextView
 import android.widget.Toast
 
 class RollingDice : AppCompatActivity() {
@@ -21,6 +23,29 @@ class RollingDice : AppCompatActivity() {
             startActivity(rollAct)
         }
     }
+
+    private fun rollDice(dieTotal : Int) {
+
+        val dice = Dice()
+        val diceImage : ImageView = findViewById(R.id.dice1_img)
+        val diceImage2 : ImageView = findViewById(R.id.dice2_img)
+
+        val diceTotal : TextView = findViewById(R.id.totalText)
+
+        when (dieTotal) {
+
+            1 -> diceTotal.text = dice.updateDice(diceImage)
+            2 -> {
+                val dice1 = dice.updateDice(diceImage)
+                val dice2 = dice.updateDice(diceImage2)
+                diceTotal.text = dice.updateTotal(dice1, dice2)
+            }
+
+        }
+
+
+    }
+
 }
 
 class Dice() {
