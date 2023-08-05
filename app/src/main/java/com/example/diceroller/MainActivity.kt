@@ -35,17 +35,18 @@ class MainActivity : AppCompatActivity() {
 
         spinner.onItemSelectedListener = object : AdapterView.OnItemSelectedListener{
             override fun onItemSelected(p0: AdapterView<*>?, p1: View?, p2: Int, p3: Long) {
-                amount = (p2 + 1)
+                mainAct.putExtra("amount", (p2+1))
+
             }
 
             override fun onNothingSelected(p0: AdapterView<*>?) {
-                amount = 0
+                mainAct.putExtra("amount", (1))
+
             }
 
         }
 
         button.setOnClickListener {
-            Toast.makeText(this, "Rolling...", Toast.LENGTH_SHORT).show()
             startActivity(mainAct)
         }
 

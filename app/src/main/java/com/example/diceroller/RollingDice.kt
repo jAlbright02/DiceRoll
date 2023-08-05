@@ -1,14 +1,12 @@
 package com.example.diceroller
 
 import android.content.Intent
-import android.media.Image
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Button
 import android.widget.ImageButton
 import android.widget.ImageView
 import android.widget.TextView
-import android.widget.Toast
 
 class RollingDice : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -19,9 +17,15 @@ class RollingDice : AppCompatActivity() {
 
         val rollAct = Intent(this, MainActivity::class.java)
 
+        val amount: Int = intent.getIntExtra("amount", 1)
+
         returnBtn.setOnClickListener {
             startActivity(rollAct)
         }
+
+        val rollButton: Button = findViewById(R.id.btn)
+        rollButton.setOnClickListener{ rollDice(amount) }
+
     }
 
     private fun rollDice(dieTotal : Int) {
