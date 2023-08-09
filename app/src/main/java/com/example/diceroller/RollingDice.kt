@@ -15,19 +15,29 @@ class RollingDice : AppCompatActivity() {
 
         val returnBtn : ImageButton = findViewById(R.id.imageButton)
 
-        val rollAct = Intent(this, MainActivity::class.java)
+        val reRollAct = Intent(this, MainActivity::class.java)
 
         val amount: Int = intent.getIntExtra("amount", 1)
 
+        //return to main menu if return btn clicked
         returnBtn.setOnClickListener {
-            startActivity(rollAct)
+            startActivity(reRollAct)
         }
 
+        //rolls once at start
+        rollDice(amount)
+
         val rollButton: Button = findViewById(R.id.btn)
+
+        //if roll btn clicked, roll dice
         rollButton.setOnClickListener{ rollDice(amount) }
 
     }
 
+    //function handles the "rolling of dice"
+    //checks value of amount and displays that amount as dice
+    //each dice is rolled and has its image and text changed
+    //after dice are rolled, text is converted to int and added up to display total
     private fun rollDice(dieTotal : Int) {
 
         val dice = DiceUpdate()
@@ -95,6 +105,8 @@ class RollingDice : AppCompatActivity() {
 
 }
 
+//used constructor as a way to have updateTotal work without a function
+// that needs parameters for all combination of dices thrown
 class Dice {
 
     var dice1 : Int = 0
@@ -103,9 +115,6 @@ class Dice {
     var dice4 : Int = 0
     var dice5 : Int = 0
     var dice6 : Int = 0
-    constructor(dice1: Int) {
-        this.dice1 = dice1
-    }
 
     constructor(dice1: Int, dice2: Int) {
         this.dice1 = dice1
@@ -150,6 +159,9 @@ class Dice {
 
 }
 
+//roll() picks random number from 1-6
+//updates dice image depending on roll() value
+//assocaites int value 1-6 to an image o dice from 1-6
 class DiceUpdate() {
 
     fun roll(): Int {
