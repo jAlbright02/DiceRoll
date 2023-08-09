@@ -8,17 +8,14 @@
 
     <Spinner
         android:id="@+id/spinner"
-        android:layout_width="106dp"
-        android:layout_height="33dp"
+        android:layout_width="92dp"
+        android:layout_height="52dp"
         android:layout_marginStart="1dp"
-        android:layout_marginTop="16dp"
+        android:layout_marginTop="12dp"
         android:layout_marginEnd="1dp"
-        android:layout_marginBottom="16dp"
         android:entries="@array/diceAmount"
         android:spinnerMode="dropdown"
-        app:layout_constraintBottom_toTopOf="@+id/button"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView" />
 
@@ -31,21 +28,22 @@
         android:layout_marginEnd="146dp"
         android:layout_marginBottom="16dp"
         android:text="Select dice amount"
+        android:textSize="24sp"
         app:layout_constraintBottom_toTopOf="@+id/spinner"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <Button
         android:id="@+id/button"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="122dp"
+        android:layout_height="56dp"
         android:layout_marginStart="161dp"
         android:layout_marginEnd="160dp"
-        android:layout_marginBottom="342dp"
+        android:layout_marginBottom="328dp"
         android:text="Continue"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.531"
         app:layout_constraintStart_toStartOf="parent" />
 </androidx.constraintlayout.widget.ConstraintLayout>
