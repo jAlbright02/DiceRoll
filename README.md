@@ -9,5 +9,9 @@ The application gives the user the option to roll up to 6 different dice.
 It is mainly for tabletop games which need large amounts of dice for each player to roll.
 After the roll, it also displays the total of all the dice rolled.
 
+## To Do
+1. Fix the placement of some items to make the application easier to use.
+2. Add a settings page so the user can change the colour and increase the font size.
+
 ## Art
 All art within the project was made by me using [Aseprite](https://www.aseprite.org/).
